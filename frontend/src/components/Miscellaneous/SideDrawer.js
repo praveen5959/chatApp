@@ -117,16 +117,16 @@ const SideDrawer = () => {
         d="flex"
         justifyContent="space-between"
         alignItems="center"
-        bg="white"
         w="100%"
         p="5px 10px 5px 10px"
         borderWidth="5px"
-        color={"black"}
+        color={"white"}
+        bg={"#404040"}
       >
         <Tooltip label="Search Users to chat" hasArrow placement="bottom-end">
-          <Button variant="ghost" onClick={onOpen}>
+          <Button variant="ghost" onClick={onOpen} _hover={{ bg: "grey" }}>
             <i color="black" className="fas fa-search"></i>
-            <Text d={{ base: "none", md: "flex" }} px={4} color="black">
+            <Text d={{ base: "none", md: "flex" }} px={4} color="white">
               Search User
             </Text>
           </Button>
@@ -142,7 +142,13 @@ const SideDrawer = () => {
             <MenuList pl={2}></MenuList>
           </Menu>
           <Menu>
-            <MenuButton as={Button} bg="white" rightIcon={<ChevronDownIcon />}>
+            <MenuButton
+              as={Button}
+              bg="#171923"
+              rightIcon={<ChevronDownIcon />}
+              color="white"
+              _hover={{ bg: "grey" }}
+            >
               <Avatar
                 size="sm"
                 cursor="pointer"
@@ -150,12 +156,14 @@ const SideDrawer = () => {
                 src={user.pic}
               />
             </MenuButton>
-            <MenuList>
+            <MenuList bg="#171923">
               <ProfileModal user={user}>
-                <MenuItem>My Profile</MenuItem>
+                <MenuItem _focus={{ bg: "grey" }}>My Profile</MenuItem>
               </ProfileModal>
               <MenuDivider />
-              <MenuItem onClick={logoutHandler}>Logout</MenuItem>
+              <MenuItem _focus={{ bg: "grey" }} onClick={logoutHandler}>
+                Logout
+              </MenuItem>
             </MenuList>
           </Menu>
         </div>

@@ -45,10 +45,11 @@ const MyChat = () => {
       flexDir="column"
       alignItems="center"
       p={3}
-      bg="white"
+      bg={"#404040"}
       w={{ base: "100%", md: "31%" }}
       borderRadius="lg"
       borderWidth="1px"
+      color={"white"}
     >
       <Box
         pb={3}
@@ -66,6 +67,8 @@ const MyChat = () => {
             d="flex"
             fontSize={{ base: "17px", md: "10px", lg: "17px" }}
             rightIcon={<AddIcon />}
+            _hover={{ bg: "grey" }}
+            bg="#171923"
           >
             New Group Chat
           </Button>
@@ -75,7 +78,8 @@ const MyChat = () => {
         d="flex"
         flexDir="column"
         p={3}
-        bg="#F8F8F8"
+        bg="#171923"
+        color={"white"}
         w="100%"
         h="100%"
         borderRadius="lg"
@@ -87,8 +91,8 @@ const MyChat = () => {
               <Box
                 onClick={() => setSelectedChat(chat)}
                 cursor="pointer"
-                bg={selectedChat === chat ? "#38B2AC" : "#E8E8E8"}
-                color={selectedChat === chat ? "white" : "black"}
+                bg={selectedChat === chat ? "#38B2AC" : "#404040"}
+                color={selectedChat === chat ? "black" : "white"}
                 px={3}
                 py={2}
                 borderRadius="lg"
